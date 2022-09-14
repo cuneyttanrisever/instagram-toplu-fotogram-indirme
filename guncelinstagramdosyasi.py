@@ -75,13 +75,15 @@ sifre.send_keys(kulsifre)
 giris.click()
 driver.implicitly_wait(10)
 try:
-    buton=driver.find_element_by_xpath("//*[@id=\"react-root\"]/div/div/section/main/div/div/div/div/button")
-except NoSuchElementException:
     buton=driver.find_element_by_xpath("//*[@id=\"react-root\"]/section/main/div/div/div/div/button")
-buton.click()
+    buton.click()
+except NoSuchElementException:
+    buton=driver.find_element_by_xpath("//*[@id=\"react-root\"]/div/div/section/main/div/div/div/div/button")
+    buton.click()
 driver.implicitly_wait(5)
-buton2=driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[2]")
-buton2.click()
+simdidegil = driver.find_elements_by_class_name("_a9-- _a9_1")
+for i in simdidegil:
+    i.click()
 driver.implicitly_wait(5)
 time.sleep(2)
 
@@ -130,6 +132,7 @@ for cookie in cookies:
 rq.headers.update(headers)
 prf=rq.get(paddrs)
 kaynak2=prf.content
+
 a="<html><head></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">"
 dex4=json.loads(kaynak2)
 resim=dex4["graphql"]["user"]["profile_pic_url_hd"]
