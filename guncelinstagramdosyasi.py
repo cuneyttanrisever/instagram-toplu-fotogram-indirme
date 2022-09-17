@@ -65,7 +65,7 @@ os.system('cls' if dil[0] == 'tr_TR' else 'clear')
 intro()
 bilgi=["İnstagram'a giriş yapılıyor...","Logging into instagram..."]
 print(bilgi[0] if dil[0] == 'tr_TR' else bilgi[1])
-driver.get("https://www.instagram.com/")
+driver.get("https://www.secure.instagram.com/")
 driver.implicitly_wait(7)
 kulladi = driver.find_element_by_name('username')
 sifre = driver.find_element_by_name('password')
@@ -88,12 +88,12 @@ driver.implicitly_wait(5)
 time.sleep(2)
 
 
-addrs="https://www.instagram.com/"+sor+"/"
+addrs="https://www.secure.instagram.com/"+sor+"/"
 paddrs=addrs+"?__a=1"
 driver.get(addrs)
 say=0
 resimlinkleri=[]
-ekle="https://www.instagram.com/p/"
+ekle="https://www.secure.instagram.com/p/"
 def say1():
     global say
     say+=1
